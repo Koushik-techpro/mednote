@@ -1,0 +1,38 @@
+.an-fullcalendar-content {
+  position: relative;
+  width: 100%;
+  padding: $padding-base;
+}
+
+.fc {
+  .fc-button-group {
+    > * {
+      margin: 0;
+    }
+
+    .fc-state-default {
+      background: transparent;
+      box-shadow: none;
+      border: 0;
+      outline: 0;
+      &:hover {
+        color: $sidebar-color;
+      }
+      &.fc-state-active {
+        color: $sidebar-color;
+      }
+    }
+  }
+  .fc-center {
+    h2 {
+      font-size: $font-size-h4;
+    }
+  }
+
+  .fc-event, .fc-event-dot {
+    background: $secondary-color-main;
+    border: 0;
+    border-radius: 0;
+    padding: 10px;
+  }
+}

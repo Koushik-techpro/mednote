@@ -1,0 +1,58 @@
+.an-single-component {
+  position: relative;
+  width: 100%;
+  margin-bottom: $margin-small * 2;
+  border-radius: $border-radius-small;
+  @include border($border-color);
+  &.contexual {
+
+    color: $font-color-white;
+    .an-component-header {
+      h6 {
+        color: $font-color-white;
+      }
+    }
+    .an-component-body {
+      background: transparent;
+    }
+  }
+
+  &.primary-bg {
+    .an-component-header {
+      @include border-bottom(darken($sidebar-color, 5%));
+    }
+  }
+
+  &.secondary-bg {
+    .an-component-header {
+      @include border-bottom(darken($secondary-color-main, 5%));
+    }
+  }
+
+  &.secondary-bg-two {
+    .an-component-header {
+      h6 {
+        color: $base-font-color;
+      }
+      @include border-bottom(darken($secondary-color-two, 5%));
+    }
+    color: $base-font-color;
+  }
+
+  &.secondary-bg-four {
+    .an-component-header {
+      @include border-bottom(darken($secondary-color-four,  5%));
+    }
+  }
+
+  &.fixed-height {
+    .an-component-body {
+      max-height: 250px;
+    }
+  }
+
+  .an-component-body {
+    position: relative;
+    background: $white;
+  }
+}

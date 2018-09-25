@@ -1,0 +1,68 @@
+.list-user-single {
+  .list-text {
+    &.with-chart {
+      @include display(flex);
+      @include align-items(center);
+
+      @media (max-width: $screen-sm) {
+        padding: $margin-10 0;
+        @include justify-content(center);
+      }
+    }
+    canvas {
+      width: 74px !important;
+      height: 52px !important;
+    }
+    .task-percentage {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-h4;
+      @media (max-width: $screen-sm) {
+        font-size: $font-size-h5;
+      }
+    }
+  }
+  .list-date{
+    &.number {
+      p {
+        color: $base-font-color;
+      }
+    }
+    &.email {
+      &.pending {
+        color: darken($secondary-color-three, 60%);
+      }
+
+      &.approve {
+        color: $secondary-color-main;
+      }
+
+      &.deleted {
+        color: $secondary-color-four;
+      }
+      p {
+        @extend .text-lowercase;
+      }
+    }
+  }
+
+  .list-action {
+    span {
+      @include display(flex);
+      @include flex-direction(column);
+
+      i {
+        height: $padding-10;
+        position: relative;
+        top: -5px;
+      }
+
+    }
+  }
+}
+
+
+.an-user-lists {
+  .stats-row {
+    padding-left: $padding-10;
+  }
+}

@@ -1,0 +1,74 @@
+.customer-support {
+  position: relative;
+  width: 100%;
+  .an-lists-body {
+    position: relative;
+    max-height: 370px;
+    overflow: auto;
+  }
+  .list-user-single {
+    @include flex-direction(column);
+    @include align-items(flex-start);
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    &.pending {
+      &:hover {
+        background: rgba($secondary-color-three, .1);
+      }
+    }
+
+    &.closed {
+      &:hover {
+        background: rgba($secondary-color-main, .1);
+      }
+    }
+
+    &.pending-long {
+      &:hover {
+        background: rgba($secondary-color-four, .1);
+      }
+    }
+
+    &:hover {
+      .list-name {
+        a {
+          span {
+            color: $base-font-color;
+          }
+        }
+      }
+      p {
+        color: $base-font-color;
+      }
+    }
+
+    .list-name {
+      position: relative;
+      width: 100%;
+      margin-bottom: $margin-small;
+
+      a {
+        @include transition(.3s);
+        span {
+          font-size: $font-size-base - 2;
+          color: $base-font-color-light;
+          font-weight: normal;
+          padding-left: $padding-10;
+          @extend .text-uppercase;
+        }
+      }
+      .list-state {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    p {
+      color: $base-font-color-light;
+      @include transition(.3s);
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.activity-signle {
+  position: relative;
+  padding-left: $padding-small * 2;
+  margin-bottom: $margin-small;
+
+
+
+  &:last-child {
+    margin-bottom: 0;
+    @include border-bottom($border-color);
+    &:before {
+      display: none;
+    }
+
+    .activity-body {
+
+      .time {
+        border-bottom: 0;
+        margin-bottom: $margin-small;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 18px;
+    height: 100%;
+    width: 1px;
+    background: $border-color;
+  }
+
+  .activity-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:$padding-base;
+    height: $padding-base;
+    background: $sidebar-color;
+    color: $font-color-white;
+    display: flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include border-radius(50%);
+    @extend .text-center;
+
+    &.following-color {
+      background: $secondary-color-main;
+    }
+    &.friend-color {
+      background: $secondary-color-two;
+    }
+    &.comment-color {
+      background: $secondary-color-three;
+      color: $base-font-color;
+    }
+
+    i {
+      font-size: $font-size-base + 4;
+    }
+  }
+
+  .activity-body {
+    position: relative;
+    p {
+      font-size: $font-size-base;
+      color: $base-font-color-light;
+      a {
+        color: $base-font-color;
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+
+    .comment-text {
+      font-size: $font-size-base - 1;
+      color: $base-font-color-light;
+      margin-bottom: $margin-10;
+      display: block;
+    }
+
+    .time {
+      color: $base-font-color-light;
+      font-size: $font-size-base - 1;
+      display: flex;
+      padding-bottom: $padding-small - 5;
+      @include border-bottom($border-color);
+      @include align-items(center);
+      @extend .text-uppercase;
+
+      i {
+        position: relative;
+        left: -3px;
+        font-size: $padding-base - 2;
+        padding-right: 2px;
+      }
+    }
+  }
+
+  &.with-image {
+    padding-left: $padding-base * 2 + 10;
+    &:before {
+      left: 20px;
+    }
+
+    .activity-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+      .activity-body {
+        .time {
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

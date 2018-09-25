@@ -1,0 +1,46 @@
+.an-number-stats {
+  position: relative;
+  background: $body-bg;
+  padding: $padding-10 - 5;
+  flex-wrap: wrap;
+  @include display(flex);
+}
+
+.stats-single {
+  position: relative;
+  padding: $padding-10 - 5;
+  width: 50%;
+  display: inline-block;
+  @extend .text-center;
+
+  .content {
+    color: $font-color-white;
+    padding: $padding-10 $padding-10 - 5;
+    @include border-radius($border-radius-base);
+
+    &.secondary-bg-three {
+      color: $base-font-color;
+      h2 {
+        color: $base-font-color;
+      }
+    }
+  }
+
+  h2 {
+    font-weight: $font-weight-bold;
+    color: $font-color-white;
+    margin: 0;
+    padding-bottom: $padding-10 - 5;
+  }
+
+  p {
+    margin: 0;
+    font-size: $font-size-base - 1;
+    @extend .text-uppercase;
+  }
+
+  span {
+    opacity: .7;
+    font-size: $font-size-base - 2;
+  }
+}

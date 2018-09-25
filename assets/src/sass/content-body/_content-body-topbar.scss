@@ -1,0 +1,45 @@
+.an-body-topbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
+  margin-bottom: $margin-small * 2;
+
+  @media (max-width: $screen-sm) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .an-page-title {
+    position: relative;
+
+    h2 {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-h2 - 6;
+      margin: 0;
+      @extend .text-uppercase;
+
+      @media (max-width: $screen-xs) {
+        font-size: $font-size-h4;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+
+      a {
+        color: $link-color;
+        margin-left: $margin-10;
+        i {
+          padding-right: $padding-10 - 5;
+        }
+        &:hover {
+          color: darken($link-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+

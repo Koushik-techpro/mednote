@@ -1,0 +1,148 @@
+.an-component-header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $padding-base;
+  @include border-bottom($border-color);
+
+  &.white-bg {
+    background: $white;
+  }
+
+  h6 {
+    margin: 0;
+    padding: $padding-small 0;
+    @extend .text-uppercase;
+  }
+
+  .component-header-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .an-form-control {
+      margin-bottom: 0;
+    }
+
+    > i {
+      margin-left: $margin-small;
+      font-size: $font-size-h3 + 5;
+      color: $base-font-color-light;
+    }
+
+    .an-search-field {
+      input {
+        height: $margin-small * 2;
+        font-size: $font-size-base - 2;
+        background: $white;
+        padding-left: $padding-10;
+      }
+      .an-btn-icon {
+        height: $margin-small * 2;
+        width: $padding-small * 2;
+      }
+
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+    }
+    .an-default-select-wrapper {
+      width: 200px;
+      height: 30px;
+      &.small {
+        width: 120px;
+      }
+      margin-left: $margin-small;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+  .an-settings-button {
+    @extend .text-right;
+  }
+
+}
+
+
+
+
+.an-settings-button {
+  position: relative;
+  display: flex;
+  @include align-items(center);
+
+  > a,
+  button {
+    position: relative;
+    font-size: $font-size-base + 6;
+    margin-left: $margin-10 - 5;
+    height: $padding-10 * 3;
+    width: $padding-10 * 3;
+    line-height: $padding-10 * 3 + 2;
+    background: $body-bg;
+    color: $base-font-color;
+    @include display(inline-block);
+    @include border-radius($border-radius-base);
+    @include border($border-color);
+    @extend .text-center;
+
+    &.setting {
+      background: $sidebar-color;
+      border-color: $sidebar-color;
+      color: $font-color-white;
+      &:hover {
+        background: darken($sidebar-color, 10%);
+      }
+    }
+
+    &.reload {
+      background: $secondary-color-main;
+      border-color:$secondary-color-main;
+      color: $font-color-white;
+      &:hover {
+        background: darken($secondary-color-main, 10%);
+      }
+    }
+    &.remove {
+      background: $secondary-color-four;
+      border-color:$secondary-color-four;
+      color: $font-color-white;
+      &:hover {
+        background: darken($secondary-color-four, 10%);
+      }
+    }
+
+    &.only-hover-setting {
+      &:hover {
+        background: $sidebar-color;
+        border-color: $sidebar-color;
+        color: $font-color-white;
+      }
+    }
+    &.only-hover-reload {
+      &:hover {
+        background: $secondary-color-main;
+        border-color:$secondary-color-main;
+        color: $font-color-white;
+      }
+    }
+    &.only-hover-remove {
+      &:hover {
+        background: $secondary-color-four;
+        border-color:$secondary-color-four;
+        color: $font-color-white;
+      }
+    }
+
+    &.circle {
+      @include border-radius(50%);
+    }
+
+  }
+}

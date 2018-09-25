@@ -1,0 +1,270 @@
+body{background:#fff; font-family: 'Open Sans', sans-serif;}
+.main-section{background:#f9f9f9;}
+.patient-header{ background:#fff; padding:15px 0;}
+.pad-left-75{padding-left:75px;}
+.pad-right-75{padding-right:75px;}
+.login-btn1{position: relative;
+background: transparent;
+border: 1px solid #81C99F;
+transition: 0.3s;
+padding: 7px 35px 7px 65px;
+font-size: 14px;
+color:#a4d7b9;
+text-decoration:none;
+line-height: 1.42857;
+border-radius: 20px;
+font-weight: 600;
+background:url(../img/patient/login-i.png) 25px 5px no-repeat;}
+
+.login-btn1:hover{color: #a4d7b9;}
+.l-icon{padding-top:4px;}
+
+/*.reg-btn1{position: relative;
+transition: 0.3s;
+padding: 8px 35px 8px 65px;
+font-size: 14px;
+color:#fff;
+text-decoration:none;
+line-height: 1.42857;
+border-radius: 20px;
+font-weight: 600;
+background:url(../img/patient/registration-i.png) #93d0ac 25px 5px no-repeat;}*/
+
+.reg-btn1{position: relative;
+transition: 0.3s;
+padding: 8px 35px;
+font-size: 14px;
+color:#fff;
+text-decoration:none;
+line-height: 1.42857;
+border-radius: 20px;
+font-weight: 600;
+background:#93d0ac;
+}
+.reg-btn1.r-icon{background:url(../img/patient/registration-i.png) #93d0ac 25px 5px no-repeat; padding-left: 65px;}
+
+.reg-btn1:hover{color: #a4d7b9;
+background-color: #21804a;}
+.l-icon{padding-top:4px;}
+
+.half-circle {
+    width: 100%;
+    height: 350px;
+    background-color: #67b688;
+    border-bottom-left-radius: 600px;
+    border-bottom-right-radius: 600px;
+    border: 0px solid gray;
+    border-bottom: 0;
+}
+
+.search-bg{background:#fff; box-shadow:0px 3px 14px #333; padding:50px 30px; margin:-130px auto 0; width:67%;
+border-radius:50px; -webkit-border-radius:50px; -moz-border-radius:50px; -o-border-radius:50px;}
+.search-cont{margin:30px auto 0; width:150px;}
+a.search-t{font-size:16px; font-weight:600;}
+.f-right{float:right;}
+.find-t{font-size:56px; color:#fff; font-weight:300; font-family: 'Open Sans', sans-serif; margin:0; padding-top:110px; text-align:center;}
+.find-t span{font-weight:600;}
+.form-control.p-form-control{height:38px;}
+.btn-pad{padding: 8px 45px;}
+.p-relative{position:relative;}
+.patient-bg{position: absolute; text-align: center;vertical-align: middle;  z-index: -1; width: 100%; top: 230px;}
+/*patient list*/
+.patient-list-bg{ width:100%; min-height:365px; 
+background: rgba(34,130,74,1);
+background: -moz-linear-gradient(left, rgba(34,130,74,1) 0%, rgba(104,182,137,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(34,130,74,1)), color-stop(100%, rgba(104,182,137,1)));
+background: -webkit-linear-gradient(left, rgba(34,130,74,1) 0%, rgba(104,182,137,1) 100%);
+background: -o-linear-gradient(left, rgba(34,130,74,1) 0%, rgba(104,182,137,1) 100%);
+background: -ms-linear-gradient(left, rgba(34,130,74,1) 0%, rgba(104,182,137,1) 100%);
+background: linear-gradient(to right, rgba(34,130,74,1) 0%, rgba(104,182,137,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#22824a', endColorstr='#68b689', GradientType=1 );}
+.container.patient-controlar{ width:60%;}
+
+.form-control.p-box-control{background-color:transparent; border:1px solid #fff; color:#fff;}
+.form-control.p-box-control option{color:#000; padding:5px 10px;}
+.search-list-main{margin-top:-100px;}
+.search-list-cont{margin-bottom:58px;}
+.search-list-cont:last-child{margin-bottom:0;}
+.search-list-bg{background:#fff; padding:20px 0px 30px 0; border:1px solid #e1e1e1; font-family: 'Open Sans', sans-serif;
+border-radius:20px; -webkit-border-radius:20px; -moz-border-radius:20px; -o-border-radius:20px;}
+
+.p-img{height: 98px; width: 98px; text-align:center; border: 1px solid #ddd; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%;}
+.p-img img{width:100%; height:100%; border: 1px solid #ddd; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%;}
+
+
+.top-list{display:inline-block; text-align:left; margin-bottom:18px;}
+.top-list h3{font-size:12px; color:#93d0ac; font-weight:700; margin:0; padding:0; display: inline-block;}
+.place{background:#4da271; margin-left:10px; padding:3px 18px; color:#fff; font-size:13px; font-weight:300; border-radius:20px; -webkit-border-radius:20px; -moz-border-radius:20px; -o-border-radius:20px; display:inline-block;}
+.viewlist{ border:1px solid #4da271; margin-left:10px; padding:3px 25px; color:#4da271; font-size:13px; font-weight:400; border-radius:20px; -webkit-border-radius:20px; -moz-border-radius:20px; -o-border-radius:20px; display:inline-block;}
+.viewlist.eye {background: url(../img/patient/eye.png) 25px 7px no-repeat; padding-left: 55px;}
+.p-name{color:#333333; font-size:20px; font-weight:400; margin:0; padding:0;}
+.p-text{color:#333333; font-size:16px; font-weight:300; padding-top:10px; margin:0;}
+.ratingstar{margin-top:30px; margin-bottom:20px;}
+.fa-star.checked{color:#ffc108;}
+.fa-star{color:#dddddd;}
+.rating-number{color:#999999;}
+.book-now{
+    background: transparent;
+    border: 1px solid #81C99F;
+    transition: 0.3s;
+    padding: 5px 22px;
+    font-size: 16px;
+    color: #a4d7b9;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+	text-transform:uppercase;
+}
+.book-now:hover{background:#81C99F; color:#fff;}
+.footer-border{ padding:20px 0; border-top: 1px solid #ddd; margin-top:150px;}
+.breadcrumb-bg{width:100%; margin-top:20px;
+background: rgba(53,156,96,1);
+background: -moz-linear-gradient(top, rgba(53,156,96,1) 0%, rgba(53,156,96,1) 48%, rgba(109,189,144,1) 98%, rgba(109,189,144,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(53,156,96,1)), color-stop(48%, rgba(53,156,96,1)), color-stop(98%, rgba(109,189,144,1)), color-stop(100%, rgba(109,189,144,1)));
+background: -webkit-linear-gradient(top, rgba(53,156,96,1) 0%, rgba(53,156,96,1) 48%, rgba(109,189,144,1) 98%, rgba(109,189,144,1) 100%);
+background: -o-linear-gradient(top, rgba(53,156,96,1) 0%, rgba(53,156,96,1) 48%, rgba(109,189,144,1) 98%, rgba(109,189,144,1) 100%);
+background: -ms-linear-gradient(top, rgba(53,156,96,1) 0%, rgba(53,156,96,1) 48%, rgba(109,189,144,1) 98%, rgba(109,189,144,1) 100%);
+background: linear-gradient(to bottom, rgba(53,156,96,1) 0%, rgba(53,156,96,1) 48%, rgba(109,189,144,1) 98%, rgba(109,189,144,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#359c60', endColorstr='#6dbd90', GradientType=0 );}
+.breadcrumb.patient-b-cump{background:none; margin:0; padding:20px 0;}
+.breadcrumb.patient-b-cump li a{color:#fff;}
+.breadcrumb.patient-b-cump > .active{color:#e8e8e8;}
+.patient-details-con{margin-top:50px;}
+.ratingstar.m-bottom{margin-bottom:0;}
+.address-t{color:#333333; font-size:16px; font-weight:300; padding-top:24px;}
+.address-text{color:#333333; font-size:16px; font-weight:300;}
+.green-t{color:#93d0ac; font-weight:400;}
+.p-statement{padding:0px 15px;}
+.p-statement h4{color:#333; font-size:20px; font-weight:400; margin:0; padding-bottom:15px;}
+.p-statement h5{color:#333; font-size:17px; font-weight:400; margin:0; padding-bottom:15px;}
+.p-statement p{ font-size:16px; font-weight:300; color:#333; padding:0; margin:0;}
+.p-statement span{font-weight:600;}
+.curriculum{ padding:15px 0;}
+.book-list-bg {
+    background: #fff;
+    padding: 0;
+    border: 1px solid #e1e1e1;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+	 overflow: hidden;
+}
+.book-list-top{background:#4da271; padding:15px 15px 10px 15px;}
+.book-list-top h2{color:#fff; font-size:24px; font-weight:400; margin:0;}
+.book-list-top p{color:#fff; font-size:14px; font-weight:400; padding-top:10px;}
+.book-list-form{padding:15px;}
+
+.centre-content{display: flex; align-content: center; text-align: center; justify-content: center;}
+.btn-gap{margin:35px 0 20px;}
+
+input.p-box-control::placeholder {
+  color: #fff;
+}
+.main-section.no-bg{background:none;}
+
+
+/*modal popup*/
+.modal-header.pad0{padding:1px 0;}
+.close.booknow-close{background:#59ab7c; color:#fff; font-size: 26px;
+    font-weight: 300;
+    padding: 10px 15px;
+	    z-index: 999;
+    position: absolute;
+    right: 0;
+    opacity: 1;}
+.right-circle{background:#59ab7c; width:100px; height:100px; padding-top: 30px; margin:30px auto 0; text-align:center; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%;}
+.thanks-con{ text-align:center;}
+.thanks-con h3{color:#333; font-size:26px; font-weight:700; padding-bottom:10px;}
+.thanks-con p{color:#333; font-size:14px; font-weight:600;}
+.doc-name{margin:15px 0 25px 0;}
+.blue{color:#184ee8;}
+
+
+.m-t-5{margin-top:5px;}
+.m-l-10{margin-left:10px;}
+.m-t-30{margin-top:30px;}
+.m-t-35{margin-top:35px;}
+.m-b-35{margin-bottom:35px;}
+.m-p-10{padding-right:10px;}
+.p-t-60{padding-top:60px;}
+.p-b-10{padding-bottom:10px;}
+
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+.logoimg{width:150px;}
+.pad-left-75 {padding-left: 0;}		
+.pad-right-75{padding-right:0;}
+.f-right{float:none;}
+.m-t-5 {margin-top: 25px;}
+.center-content{display: flex; text-align: center; align-items: center; justify-content: center;}
+.search-list-main{margin-top:-40px;}
+.container.patient-controlar {width: 100%;}
+.search-list-cont {margin-bottom: 20px;}
+
+.p-img{margin: 0 auto 20px;}
+.login-btn1{padding: 5px 15px 5px 50px;}
+.reg-btn1{padding: 8px 25px;}
+.reg-btn1.r-icon{padding-left:50px;}
+.place{padding: 2px 10px; font-size: 12px; margin-left: 5px;}
+.viewlist{font-size:9px; padding: 3px 15px; margin-left: 5px;}
+.viewlist.eye {background: url(../img/patient/eye.png) 10px 4px no-repeat; padding-left: 30px;}
+.p-text, .address-t, .p-statement p, .address-text{font-size:14px;}
+.book-list-bg{margin-top: 20px;}
+.patient-details-con {margin-top: 20px;}
+.book-list-top p{font-size:13px;}
+.no-pad{padding:0 !important;}
+.p-statement h4{font-size:18px;}
+.address-t br{display:none;}
+.book-now{font-size:14px;}
+.mob-logo{width:150px;}
+.find-t{font-size:30px; padding-top:30px;}
+.search-bg{width:90%;}
+.half-circle{height:250px;}
+.patient-bg img{width:100%;}
+.p-relative{margin-bottom:20px;}
+
+
+
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

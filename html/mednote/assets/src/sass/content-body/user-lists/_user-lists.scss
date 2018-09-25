@@ -1,0 +1,247 @@
+.an-user-lists {
+  position: relative;
+  background: $body-bg;
+
+  &.user-stats {
+    .list-user-single {
+      &:nth-child(even) {
+        background: $body-bg;
+      }
+    }
+    .an-lists-body {
+      max-height: 220px;
+    }
+  }
+
+
+  &.messages {
+    .list-user-single {
+      &:nth-child(even) {
+        background: $bg-body;
+      }
+    }
+  }
+
+  &.tables {
+    @include border($border-color);
+
+    .an-lists-body {
+      max-height: 270px;
+    }
+
+  }
+
+
+  .list-title {
+    display: flex;
+    position: relative;
+    padding: ($padding-10 - 7) $padding-base ($padding-10 - 4);
+    @include align-items(center);
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+
+
+    h6 {
+      margin: 0;
+      color: $base-font-color-light;
+      @extend .text-uppercase;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  .an-lists-body {
+    position: relative;
+    max-height: 305px;
+    overflow: auto;
+
+    @media (max-width: 767px) {
+      max-height: 350px;
+    }
+
+  }
+  .list-user-single {
+    display: flex;
+    position: relative;
+    padding: $padding-10 $padding-base;
+    cursor: pointer;
+    @include border-top($border-color);
+    @include align-items(center);
+    @include transition(.3s);
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+
+
+
+    > div {
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    &:hover {
+      .list-name a {
+        color: $link-color;
+      }
+    }
+
+
+
+
+    .list-text {
+      p {
+        margin: 0;
+        padding-right: $padding-base;
+        @include text-overflow();
+
+        @media (max-width: 767px) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .list-name {
+      display: flex;
+      @include align-items(center);
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+
+      .an-custom-checkbox {
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+
+      .image {
+        width: 40px;
+        height: 40px;
+        display: block;
+        margin-right: $margin-10;
+        @include border-radius(50%);
+        @media (max-width: 767px) {
+          margin-bottom: $margin-10;
+        }
+      }
+
+      a {
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    .list-date {
+      color: $base-font-color-light;
+      font-size: $font-size-base - 1;
+      @extend .text-uppercase;
+      @media (max-width: 767px) {
+        text-align: center;
+        margin-top: $margin-10 - 5;
+      }
+    }
+
+    .list-text {
+      @media (max-width: 767px) {
+        text-align: center;
+        margin-top: $margin-10 - 5;
+      }
+    }
+
+    .list-state {
+      @media (max-width: 767px) {
+        position: relative;
+        top: 20px;
+      }
+    }
+  }
+
+  .list-action {
+    display: flex;
+    @include justify-content(flex-end);
+    button {
+      margin-left: $margin-10;
+    }
+  }
+}
+
+.list-action {
+  text-align: right;
+  .btn-group {
+    position: relative;
+    &.open {
+      button {
+        color: $link-color;
+      }
+    }
+    button {
+      color: $base-font-color-light;
+      &:hover {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+
+.msg-tag {
+  position: relative;
+  color: $font-color-white;
+  text-transform: uppercase;
+  padding: $padding-10 - 7 $padding-10;
+  font-size: $font-size-base - 4;
+  background: $bg-body;
+  @include border-radius(50px);
+
+
+  &.unread {
+    background: $sidebar-color;
+  }
+
+  &.read {
+    background: $secondary-color-main;
+  }
+
+  &.draft {
+    background: $secondary-color-three;
+    color: $base-font-color;
+  }
+
+  &.spam {
+    background: $secondary-color-four;
+  }
+}
+
+
+.right-align.dropdown-menu {
+  right: 0;
+  left: auto;
+  border-color: $border-color;
+}
+
+
+.an-basic-list {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: $padding-10 - 5;
+  li {
+    a {
+      padding: $padding-10 - 7 $padding-small;
+      font-size: $font-size-base - 1;
+      display: block;
+      @include transition(.3s);
+
+      &:hover {
+        background: $bg-body;
+      }
+    }
+  }
+}
+

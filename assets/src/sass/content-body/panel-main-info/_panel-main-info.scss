@@ -1,0 +1,129 @@
+.an-panel-main-info {
+  position: relative;
+  width: 100%;
+}
+
+.an-panel-main-info-single {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding-base + 5 $padding-small * 2;
+  margin-bottom: $margin-small * 2;
+  overflow: hidden;
+  @include border-radius($border-radius-base);
+
+  @media (min-width: $screen-md) and (max-width: $screen-lg) {
+    padding: $padding-base + 5 $padding-base;
+  }
+
+  &.slider-info {
+    padding: $padding-small;
+    @media (max-width: $screen-md) {
+
+      padding: $padding-base;
+    }
+    h2 {
+      font-size: $font-size-h5;
+      text-align: center;
+    }
+  }
+
+  &.color-cyan {
+    background: $secondary-color-main;
+    @include border(darken($secondary-color-main, 4%));
+  }
+
+  &.lime-green {
+    background: $secondary-color-two;
+    @include border(darken($secondary-color-two, 4%));
+  }
+
+  &.pale-yellow {
+    background: $secondary-color-three;
+    @include border(darken($secondary-color-three, 10%));
+    h2 {
+      color: darken($secondary-color-three , 70%);
+    }
+    i {
+      color: $base-font-color;
+      opacity: .2;
+    }
+  }
+
+  &.soft-pink {
+    background: $secondary-color-four;
+    @include border(darken($secondary-color-four, 4%));
+  }
+
+  &.white {
+    background: $font-color-white;
+    @include border(darken($font-color-white, 7%));
+    h2 {
+      color: $base-font-color;
+    }
+    i {
+      color: $base-font-color-light;
+    }
+  }
+
+  .left-icon-big {
+    position: relative;
+    width: $padding-small * 3;
+    height: $padding-small * 3;
+    background: $secondary-color-main;
+    font-size: $font-size-h2 + 5;
+    @include border-radius(50%);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+
+    i {
+      color: $font-color-white;
+    }
+  }
+
+
+  h2 {
+    position: relative;
+    font-size: $font-size-h2;
+    color: $font-color-white;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    @extend .text-uppercase;
+
+    i {
+      display: block;
+      font-size: $font-size-h3;
+      margin-bottom: $margin-10 - 2;
+    }
+
+    .info-identifier {
+      display: block;
+      font-size: $font-size-base - 2;
+      font-weight: $font-weight-regular;
+      opacity: .6;
+      @extend .text-uppercase;
+
+      &.lowercase {
+        padding-top: $padding-10 - 5;
+        @extend .text-capitalize;
+      }
+    }
+  }
+
+  > i {
+    position: absolute;
+    right: 0;
+    top: 46%;
+    font-size: $padding-10 * 7;
+    color: $font-color-white;
+    color: #ffffff;
+    opacity: .4;
+  }
+
+  img {
+    max-width: 65px;
+  }
+}
