@@ -171,6 +171,8 @@ class Doctor extends CI_Controller {
 
 		if($this->input->post('email'))
 		{
+			print_r($this->input->post());
+			exit;
 			
 			$form_data = array();
 			$form_data['first_name'] = ucwords(strtolower($this->input->post('first_name')));

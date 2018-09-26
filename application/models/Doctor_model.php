@@ -261,7 +261,7 @@ class Doctor_model extends CI_Model {
         $this->db->delete('tbl_doctor_degree'); 
 
         $count_degree = count($data['degree']);
-        for($dg = 0; $dg <= $count_degree; $dg++)
+        for($dg = 0; $dg < $count_degree; $dg++)
         {
             $degree_is = strtoupper($data['degree'][$dg]);
             $passing_year_is = $data['passing_year'][$dg];
