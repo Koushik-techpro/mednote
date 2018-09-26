@@ -151,7 +151,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="info-single">
                     <p class="light">Year</p>
                     <p>
-                      <select class="an-form-control" id="" name="passing_yaer[]">
+                      <select class="an-form-control" id="" name="passing_year[]">
                         <option value="">Select year</option>
                         <?php
                         $current_year = date("Y");
