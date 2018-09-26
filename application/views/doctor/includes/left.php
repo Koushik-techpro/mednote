@@ -21,12 +21,12 @@ else
         <div class="user-pic"> <img src="<?=base_url($doctor_profile_image)?>" alt=""></div>
         <h2 class="profile-name"><?php echo $doctor_name; ?></h2>
         <p class="email-t"><?php echo $doctor_email; ?></p>
-        <a href="#" class="an-btn an-btn-primary-transparent">My Profile</a> </div>
+        <a href="<?=base_url('doctor-profile')?>" class="an-btn an-btn-primary-transparent <?php if($navigation == 'profile') { ?> profile-active <?php } ?>">My Profile</a> </div>
       <!-- end .AN-SIDEBAR-WIDGETS -->
       
       <div class="an-sidebar-nav">
         <ul class="an-main-nav">
-          <li class="an-nav-item current active"> <a href="<?=base_url('doctor-dashboard')?>"> <i class="fa fa-bar-chart"></i> <span class="nav-title">Dashboard</span> </a> </li>
+          <li class="an-nav-item <?php if($navigation == 'dashboard') { ?> current active <?php } ?>"> <a href="<?=base_url('doctor-dashboard')?>"> <i class="fa fa-bar-chart"></i> <span class="nav-title">Dashboard</span> </a> </li>
           <li class="an-nav-item"> <a class="" href="#"> <i class="ion-calendar"></i> <span class="nav-title">Today's Visits </span> </a> </li>
           <li class="an-nav-item"> <a class="" href="#"> <i class="fa fa-user"></i> <span class="nav-title">Patient Search </span> </a> </li>
           <li class="an-nav-item"> <a class="" href="#"> <i class="ion-podium"></i> <span class="nav-title">Statistics</span> </a> </li>

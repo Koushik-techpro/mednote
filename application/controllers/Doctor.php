@@ -15,6 +15,7 @@ class Doctor extends CI_Controller {
 		$page_data = array();
 		$footer_data = array();
 		$header_data['title'] = "Welcome to your dashboard";
+		$left_data['navigation'] = 'dashboard';
 
 		// check login status 
 		$login_status = $this->doctor_model->check_login_status(); 
@@ -145,6 +146,73 @@ class Doctor extends CI_Controller {
 	}
 
 	// forget password end
+
+	// doctor profile part start
+
+	public function profile()
+	{
+		$header_data  = array();
+		$left_data = array();
+		$page_data = array();
+		$footer_data = array();
+		$header_data['title'] = "My profile";
+		$header_data['navigation'] = 'profile';
+		$left_data['navigation'] = 'profile';
+
+		// check login status 
+		$login_status = $this->doctor_model->check_login_status(); 
+		if($login_status == 'false')
+		{
+			// redirect to dashboard 
+			redirect('doctor-entry');
+		}
+
+
+
+		if($this->input->post('email'))
+		{
+			
+			$form_data = array();
+			$form_data['first_name'] = ucwords(strtolower($this->input->post('first_name')));
+			$form_data['last_name'] = ucwords(strtolower($this->input->post('last_name')));
+			$form_data['gender'] = $this->input->post('gender');
+			$form_data['experience_year'] = $this->input->post('experience_year');
+			$form_data['summary'] = ucfirst(strtolower($this->input->post('summary')));
+			$form_data['degree'] = $this->input->post('degree');
+			$form_data['passing_year'] = $this->input->post('passing_year');
+			$form_data['email'] = strtolower($this->input->post('email'));
+			$form_data['password'] = $this->input->post('password');
+			$form_data['phone'] = $this->input->post('phone');
+
+			$update_profile = $this->doctor_model->update_profile($form_data); 
+
+			redirect('doctor-profile');
+
+		}
+		
+
+
+		// get doctor details
+		$doctor_details = $this->doctor_model->get_doctor_details(); 
+		$header_data['doctor_details'] = $doctor_details;
+		$left_data['doctor_details'] = $doctor_details;
+		$page_data['doctor_details'] = $doctor_details;
+		$page_data['doctor_degree'] = $this->doctor_model->get_doctor_degree(); 
+
+
+
+
+		$this->load->view('doctor/includes/header', $header_data);
+		$this->load->view('doctor/includes/left', $left_data);
+		$this->load->view('doctor/doctor_profile_view', $page_data);
+		$this->load->view('doctor/includes/footer', $footer_data);
+
+
+
+
+	}
+
+	// doctor profile part end
 
 
 

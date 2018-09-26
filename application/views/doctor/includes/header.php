@@ -14,6 +14,22 @@ else
 	$doctor_email = "";
 	$doctor_profile_image = "assets/img/users/user4.jpeg";
 }
+if(isset($navigation))
+{
+  if($navigation == 'profile')
+  {
+    $profile_page_status = "1";
+  }
+  else
+  {
+    $profile_page_status = "0";
+  }
+}
+else
+{
+  $profile_page_status = "0";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -55,7 +71,7 @@ else
           <div class="dropdown-menu">
             <p class="an-info-count">Profile Settings</p>
             <ul class="an-profile-list">
-              <li><a href="#"><i class="icon-user"></i>My profile</a></li>
+              <li><a href="<?=base_url('doctor-profile')?>" <?php if($profile_page_status == "1") { ?> class="active" <?php } ?>><i class="icon-user"></i>My profile</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="<?=base_url('doctor-logout')?>"><i class="icon-download-left"></i>Log out</a></li>
             </ul>

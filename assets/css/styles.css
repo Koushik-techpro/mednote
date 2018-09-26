@@ -4180,8 +4180,12 @@ svg:not(:root) {
 
 
 .login-radio .an-custom-radiobox label:before{font-size:28px; top:5px;}
-
-
+.an-btn-primary-transparent.profile-active {
+    background: #81C99F;;
+    border: 1px solid #81C99F;
+    color: #fff;
+  }
+.active{color: #81C99F;}
 
 
 

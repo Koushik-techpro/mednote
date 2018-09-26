@@ -37,7 +37,7 @@ class Doctor_model extends CI_Model {
     {
         $doctor_details = array();
         $doctor_id = $this->session->userdata('user_id');   
-        $this->db->select('id, doctor_id, first_name, last_name, profile_image, email, gender, create_date, last_update_date, verified_status');
+        $this->db->select('id, doctor_id, first_name, last_name, profile_image, email, phone, gender, create_date, last_update_date, experience_year, summary, verified_status');
         $this->db->from('tbl_doctor');
         $this->db->where('doctor_id', $doctor_id);
         $query = $this->db->get();     
@@ -47,6 +47,26 @@ class Doctor_model extends CI_Model {
             $doctor_details = json_decode(json_encode($query_row), True);
         } 
        return $doctor_details;
+
+    }
+
+    function get_doctor_degree()
+    {
+        $doctor_degree = array();
+        $doctor_id = $this->session->userdata('user_id');   
+        $this->db->select('*');
+        $this->db->from('tbl_doctor_degree');
+        $this->db->where('doctor_id', $doctor_id);
+        $query = $this->db->get();     
+        if($query->num_rows() > 0)
+        {
+            foreach($query->result() as $result)
+            {
+                $doctor_degree[] = array("degree" => $result->degree, "passing_year" => $result->passing_year);
+            }
+            
+        } 
+       return $doctor_degree;
 
     }
 
@@ -191,6 +211,68 @@ class Doctor_model extends CI_Model {
         $data = array("user_type" => "doctor", "user_id" => $doctor_id, "unique_id" => $unique_id, "is_expired" => '0');
         $this->db->insert('tbl_forget_password',$data);
         return $unique_id;
+    }
+
+    function update_profile($data)
+    {
+        $doctor_id = $this->session->userdata('user_id'); 
+
+        // update profile basic info
+        $update_data = array("first_name" => $data['first_name'], "last_name" => $data['last_name'], "gender" => $data['gender'], "experience_year" => $data['experience_year'], "summary" => $data['summary'], "phone" => $data['phone']);
+
+        $this->db->where('doctor_id', $doctor_id);
+        $this->db->update('tbl_doctor', $update_data);
+
+        // check email and update
+        $this->db->select('doctor_id');
+        $this->db->from('tbl_doctor');
+        $this->db->where('email', $data['email']);
+        $this->db->where('doctor_id !=', $doctor_id);
+        $email_check_query = $this->db->get();
+        if($email_check_query->num_rows() > 0)
+        {
+            // email already exist..
+            $this->session->set_flashdata('error_message', 'Email already registred with another account. Please use different email.');
+        }
+        else
+        {
+            // update email
+            $email_update_data = array('email' => $data['email']);
+            $this->db->where('doctor_id', $doctor_id);
+            $this->db->update('tbl_doctor', $email_update_data);
+        }
+
+        // update password
+        if($data['password'] != '')
+        {
+             $password_update_data = array('password' => md5($data['email']));
+             $this->db->where('doctor_id', $doctor_id);
+             $this->db->update('tbl_doctor', $password_update_data);
+              $this->session->set_flashdata('success_message', 'Profile information and password successfully updated.');
+        }
+        else
+        {
+            $this->session->set_flashdata('success_message', 'Profile information successfully updated.');
+        }
+
+        // update degree
+        // delete previous data for this doctor
+        $this->db->where('doctor_id', $doctor_id);
+        $this->db->delete('tbl_doctor_degree'); 
+
+        $count_degree = count($data['degree']);
+        for($dg = 0; $dg < $count_degree; $dg++)
+        {
+            $degree_is = strtoupper($data['degree'][$dg]);
+            $passing_year_is = $data['passing_year'][$dg];
+            if($degree_is != '' && $passing_year_is != '')
+            {
+                $degree_data = array("doctor_id" => $doctor_id, "degree" => $degree_is, "passing_year" => $passing_year_is);    
+                $this->db->insert('tbl_doctor_degree',$degree_data);
+            }
+        }
+
+        return "success";
     }
    
 
