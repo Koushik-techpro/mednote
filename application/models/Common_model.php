@@ -13,7 +13,7 @@ class Common_model extends CI_Model {
     {
         $return_data = array("status" => "false");
         $check_status = "false";
-        $unique_code = base64_decode($unique_code);
+        $unique_code = $unique_code;
 
         if($user_type = 'doctor')
         {

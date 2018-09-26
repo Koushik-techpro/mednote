@@ -131,7 +131,7 @@ class Doctor extends CI_Controller {
 				$unique_id = $this->doctor_model->update_forget_password_unique_id($doctor_id); 
 
 				// create reset link 
-				$reset_link = base_url('reset-password/doctor/'.base64_encode($unique_id));
+				$reset_link = base_url('reset-password/doctor/'.$unique_id);
 				$email_subject = "Recover Password - MedNote";
 				$email_body = "You have requested for reset your password.<br> Please click on bellow link for reset your password. <a href='".$reset_link."'>Reset Password</a>";
 
@@ -171,9 +171,7 @@ class Doctor extends CI_Controller {
 
 		if($this->input->post('email'))
 		{
-			print_r($this->input->post());
-			exit;
-			
+
 			$form_data = array();
 			$form_data['first_name'] = ucwords(strtolower($this->input->post('first_name')));
 			$form_data['last_name'] = ucwords(strtolower($this->input->post('last_name')));
