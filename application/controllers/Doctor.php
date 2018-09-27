@@ -214,6 +214,154 @@ class Doctor extends CI_Controller {
 
 	// doctor profile part end
 
+	// partners part start
+
+	public function partner()
+	{
+
+		$header_data  = array();
+		$left_data = array();
+		$page_data = array();
+		$footer_data = array();
+		$header_data['title'] = "My Partners";
+		$left_data['navigation'] = 'partner';
+
+		// check login status 
+		$login_status = $this->doctor_model->check_login_status(); 
+		if($login_status == 'false')
+		{
+			// redirect to dashboard 
+			redirect('doctor-entry');
+		}
+
+		// form submit part start
+		if($this->input->post('phone'))
+		{
+			$form_data = array();
+			/*print_r($this->input->post());
+			exit;*/
+
+			$form_data['name'] = ucwords(strtolower($this->input->post('name')));
+			$form_data['email'] = strtolower($this->input->post('email'));	
+			$form_data['phone'] = $this->input->post('phone');
+			$form_data['partner_type'] = $this->input->post('partner_type');	
+			$form_data['address'] = ucwords(strtolower($this->input->post('address')));	
+
+			// add partner
+			$add_partner = $this->doctor_model->add_partner($form_data);
+			redirect('doctor-partner');
+
+		}
+		// form submit part end		
+
+		// get doctor details
+		$doctor_details = $this->doctor_model->get_doctor_details(); 
+		$header_data['doctor_details'] = $doctor_details;
+		$left_data['doctor_details'] = $doctor_details;
+
+		// get doctor partnars
+		$partner_list = $this->doctor_model->get_partner_list();
+		$page_data['partner_list'] = $partner_list;
+
+		$this->load->view('doctor/includes/header', $header_data);
+		$this->load->view('doctor/includes/left', $left_data);
+		$this->load->view('doctor/doctor_partner_view', $page_data);
+		$this->load->view('doctor/includes/footer', $footer_data);
+
+
+
+
+	}
+
+	// partners part end
+
+	//delete partner start
+	function delete_partner($id)
+	{
+		$this->doctor_model->delete_partner($id);
+		redirect('doctor-partner');
+	}
+	//delete partner end 
+
+	// staff part start
+
+	public function staff()
+	{
+		$this->load->model('common_model');
+
+		$header_data  = array();
+		$left_data = array();
+		$page_data = array();
+		$footer_data = array();
+		$header_data['title'] = "My Staff";
+		$left_data['navigation'] = 'staff';
+
+		// check login status 
+		$login_status = $this->doctor_model->check_login_status(); 
+		if($login_status == 'false')
+		{
+			// redirect to dashboard 
+			redirect('doctor-entry');
+		}
+
+		// form submit part start
+		if($this->input->post('phone'))
+		{
+
+			$form_data = array();
+			
+			$form_data['username'] = strtolower($this->input->post('username'));
+			$form_data['password'] = strtolower($this->input->post('password'));	
+			$form_data['name'] = ucfirst(strtolower($this->input->post('name')));
+			$form_data['gender'] = $this->input->post('gender');	
+			$form_data['degree'] = ucwords(strtolower($this->input->post('degree')));
+			$form_data['phone'] = $this->input->post('phone');	
+			$form_data['governorate'] = $this->input->post('governorate');	
+			$form_data['town'] = ucwords(strtolower($this->input->post('town')));	
+			$form_data['address'] = ucwords(strtolower($this->input->post('address')));	
+			$form_data['email'] = strtolower($this->input->post('email'));
+
+			// add staff
+			$add_staff = $this->doctor_model->add_staff($form_data);
+			redirect('doctor-staff');
+			
+		}
+		// form submit part end		
+
+		// get doctor details
+		$doctor_details = $this->doctor_model->get_doctor_details(); 
+		$header_data['doctor_details'] = $doctor_details;
+		$left_data['doctor_details'] = $doctor_details;
+		$governorate_list = $this->common_model->get_governorate_list();
+		$page_data['governorate_list'] = $governorate_list;
+
+		// get doctor staff
+		//$partner_list = $this->doctor_model->get_partner_list();
+		//$page_data['partner_list'] = $partner_list;
+
+		$this->load->view('doctor/includes/header', $header_data);
+		$this->load->view('doctor/includes/left', $left_data);
+		$this->load->view('doctor/doctor_staff_view', $page_data);
+		$this->load->view('doctor/includes/footer', $footer_data);
+
+
+
+
+	}
+
+	public function check_staff_username()
+	{
+		$return_response = "false";
+		$username = $this->input->post('username');
+		if($username != '')
+		{
+			$return_response = $this->doctor_model->check_staff_username($username);
+		}	
+		echo $return_response;	
+	}
+
+	// staff part end
+
 
 
 	public function doctor_logout()

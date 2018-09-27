@@ -111,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <div class="col-md-6 pad-right">
                         <div class="info-single">
                           <p class="light">Year</p>
-                          <p>
+                          <p class="trash-posi">
                             <select class="an-form-control" name="passing_year[]">
                               <option value="">Select year</option>
                               <?php
@@ -125,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               }
                               ?>
                             </select>
-                            <a href="javascript:void(0)" onclick="remove_degree('<?=$div_id?>')" style="color:red; text-align:right">Delete</a>
+                            <a href="javascript:void(0)" class="trash-i" onclick="remove_degree('<?=$div_id?>')"><i class="fa fa-trash-o trash-icon" aria-hidden="true"></i></a>
                           </p>
                         </div>
                       </div>
@@ -143,7 +143,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="info-single">
                     <p class="light">Degree </p>
                     <p>
-                      <input type="text" class="an-form-control" placeholder="" name="degree[]">
+                      <input type="text" class="an-form-control mb-gap" placeholder="" name="degree[]">
                     </p>
                   </div>
                 </div>
@@ -151,7 +151,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="info-single">
                     <p class="light">Year</p>
                     <p>
-                      <select class="an-form-control" id="" name="passing_year[]">
+                      <select class="an-form-control mb-gap" id="" name="passing_year[]">
                         <option value="">Select year</option>
                         <?php
                         $current_year = date("Y");
@@ -248,14 +248,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $("#add_degree").click(function(){
       var div_id = randomNumberFromRange(111111, 99999999);
       var div_id_is = "'degree_"+div_id+"'";
-    $("#add_degree_div").append('<div id="degree_'+div_id+'"><div class="col-md-6 pad-left"><div class="info-single"><p class="light">Degree </p><p> <input type="text" class="an-form-control" placeholder="" name="degree[]"></p> </div></div><div class="col-md-6 pad-right"><div class="info-single"><p class="light">Year</p><p><select class="an-form-control" name="passing_year[]"><option value="">Select year</option><?php
+    $("#add_degree_div").append('<div id="degree_'+div_id+'"><div class="col-md-6 pad-left"><div class="info-single"><p class="light">Degree </p><p> <input type="text" class="an-form-control" placeholder="" name="degree[]"></p> </div></div><div class="col-md-6 pad-right"><div class="info-single"><p class="light">Year</p><p class="trash-posi"><select class="an-form-control" name="passing_year[]"><option value="">Select year</option><?php
                         $current_year = date("Y");
                         for($yr = 0; $yr < 60; $yr++)
                         {
                           ?><option><?=$current_year?></option><?php 
                           $current_year--;
                         }
-                        ?></select><a href="javascript:void(0)" onclick="remove_degree('+div_id_is+')" style="color:red; text-align:right">Remove</a></p></div></div><div class="clearfix"></div></div>');
+                        ?></select><a href="javascript:void(0)" class="trash-i" onclick="remove_degree('+div_id_is+')"><i class="fa fa-trash-o trash-icon" aria-hidden="true"></i></a></p></div></div><div class="clearfix"></div></div>');
     return false;
     });
 

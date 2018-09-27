@@ -23,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--  MAIN SCRIPTS START FROM HERE  above scripts from plugin   --> 
 <script src="<?=base_url()?>assets/js/customize-chart.js" type="text/javascript"></script> 
 <script src="<?=base_url()?>assets/js/scripts.js" type="text/javascript"></script> 
+<script type="text/javascript" src="<?=base_url()?>assets/js/datatables.min.js"></script> 
 <script>
     $(function(){
 		$(".js-toggle-sidebar").click(function(){
@@ -33,6 +34,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--pie chart--> 
 
 <script src= "<?=base_url()?>assets/js-plugins/zingchart.min.js"></script> 
+
+<script>
+  $(document).ready(function() {
+      $('#example').DataTable({
+    "searching": false,
+    "lengthChange": false
+    });
+  });
+  </script> 
 <script>
     var myConfig = {
       type: "pie",

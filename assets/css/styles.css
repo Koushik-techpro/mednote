@@ -4103,8 +4103,7 @@ div.dataTables_wrapper div.dataTables_filter{width:auto !important; float:none !
 .white-logo{margin-top:40px !important;}
 .an-single-component{padding:10px;}
 h1.welcome{font-size:20px!important;}
-
-
+.trash-i{float: right; margin-top: -14px; position: initial !important;}
 
 }
 
@@ -4186,8 +4185,9 @@ svg:not(:root) {
     color: #fff;
   }
 .active{color: #81C99F;}
-
-
+.fa.fa-trash-o.trash-icon{color: #f00; font-size: 16px;}
+.trash-posi{position: relative;}
+.trash-i{position: absolute; right: -19px; top: 8px;}
 
 
 

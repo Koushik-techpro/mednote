@@ -33,8 +33,8 @@ else
           <li class="an-nav-item"> <a class="" href="#"> <i class="fa fa-money"></i> <span class="nav-title">Financials </span> </a> </li>
           <li class="an-nav-item"> <a class="" href="#"> <i class="ion-information"></i> <span class="nav-title">Address</span> </a> </li>
           <li class="an-nav-item"> <a class="" href="#"> <i class="ion-android-calendar"></i> <span class="nav-title">Schedule</span> </a> </li>
-          <li class="an-nav-item"> <a class="" href="#"> <i class="ion-android-contacts"></i> <span class="nav-title">Partners</span> </a> </li>
-          <li class="an-nav-item"> <a class="" href="#"> <i class="ion-briefcase"></i> <span class="nav-title">Staff </span> </a> </li>
+          <li class="an-nav-item <?php if($navigation == 'partner') { ?> current active <?php } ?>"> <a class="" href="<?=base_url('doctor-partner')?>"> <i class="ion-android-contacts"></i> <span class="nav-title">Partners</span> </a> </li>
+          <li class="an-nav-item <?php if($navigation == 'staff') { ?> current active <?php } ?>"> <a class="" href="<?=base_url('doctor-staff')?>"> <i class="ion-briefcase"></i> <span class="nav-title">Staff </span> </a> </li>
         </ul>
         <!-- end .AN-MAIN-NAV --> 
       </div>

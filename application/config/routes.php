@@ -58,5 +58,10 @@ $route['doctor-entry'] = 'Doctor/doctor_entry';
 $route['doctor-forget-password'] = 'Doctor/forget_password';
 $route['doctor-logout'] = 'Doctor/doctor_logout';
 $route['doctor-profile'] = 'Doctor/profile';
+$route['doctor-partner'] = 'Doctor/partner';
+$route["doctor-delete-partner/(:any)"]="doctor/delete_partner/$1";
+$route['doctor-staff'] = 'Doctor/staff';
+
+
 
 $route["reset-password/(:any)/(:any)"]="common/reset_password/$1/$2";

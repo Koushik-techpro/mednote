@@ -45,6 +45,7 @@ else
 <link rel="stylesheet" href="<?=base_url()?>assets/css/styles.css">
 <link rel="stylesheet" href="<?=base_url()?>assets/css/custom.css">
 <link rel="stylesheet" href="<?=base_url()?>assets/css/font-awesome.min.css">
+<link href="<?=base_url()?>assets/css/bootstrap-datatables.min.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>

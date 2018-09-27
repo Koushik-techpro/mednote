@@ -84,5 +84,24 @@ class Common_model extends CI_Model {
             return $result;
     }
 
+    function get_governorate_list()
+    {
+        $governorates_rows = array();
+        $this->db->select('*');
+        $this->db->from('tbl_governorates');
+        $query = $this->db->get();
+        if($query->num_rows() > 0)
+        {
+            foreach($query->result() as $result)
+            {
+                $governorates_rows[] = array("id" => $result->id, "name" => $result->name);
+            }
+        }
+
+    return $governorates_rows;
+    }
+
+
 
 }
+
